@@ -1,3 +1,4 @@
+
 class Action
 	
 	attr_reader :unit, :game
@@ -35,6 +36,5 @@ class Action
 		targets = near.find_all{ |x,y| target?(unit, map.units[x.y]) }
 		return targets.collect{ |x,y| self.new(unit, game, x, y) }
 	end
-
 
 end

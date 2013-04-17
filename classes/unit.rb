@@ -1,5 +1,5 @@
 class Unit
-	attr_reader :name, :heath, :movement, :actions
+	attr_reader :name, :health, :movement, :actions
 	attr_accessor :x, :y
 
 	def initialize(player, name)
@@ -17,7 +17,7 @@ class Unit
 	end
 
 	def dead?
-		return @heath <= 0
+		return @health <= 0
 	end
 
 	def alive?
@@ -39,7 +39,7 @@ class Unit
 	end
 
 	def action_choices
-		return acctions.collect do |action|
+		return actions.collect do |action|
 			Choice.new(*action.rep) { action }
 		end
 	end
